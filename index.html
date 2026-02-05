@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Agus Saleh Rumbouw</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #ff6b6b;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+
+        .dark-mode {
+            --primary-color: #5d8cc0;
+            --secondary-color: #1a7bb9;
+            --accent-color: #ff8585;
+            --light-color: #1a1a2e;
+            --dark-color: #e9ecef;
+            --gray-color: #adb5bd;
+            --light-gray: #16213e;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode header {
+            background-color: rgba(26, 26, 46, 0.95);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 2rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Home Section - Diperbaiki untuk semua device */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-content {
+            max-width: 800px;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .typing-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            min-height: 120px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .typing-text span {
+            color: var(--accent-color);
+
+        }
+
+        .home-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .home-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .home-social .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .home-social .social-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Home Second Page */
+        .home-second {
+            background-color: var(--light-gray);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-second-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .home-second-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(100px);
+            animation: slideInRight 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .home-second-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .home-second-visual {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideInLeft 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .home-second-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(-100px);
+            animation: fallIn 1.5s ease-out forwards;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+            border: 8px solid var(--light-color);
+        }
+
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .certificates-btn {
+            margin-top: 2rem;
+        }
+
+        .certificates-container {
+            margin-top: 2rem;
+            display: none;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .certificate-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .certificate-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Certificate Modal */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            background: none;
+            border: none;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+
+        /* Projects Section */
+        .projects-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 10px 25px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tab-btn:hover:not(.active) {
+            background-color: rgba(74, 111, 165, 0.1);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Tech Stack dengan Warna Asli */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .tech-item {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Warna asli untuk setiap teknologi */
+        .html5 { color: #E34F26; }
+        .css3 { color: #1572B6; }
+        .js { color: #F7DF1E; }
+        .react { color: #61DAFB; }
+        .node { color: #339933; }
+        .python { color: #3776AB; }
+        .git { color: #F05032; }
+        .bootstrap { color: #7952B3; }
+        .mongodb { color: #47A248; }
+        .figma { color: #F24E1E; }
+
+        .tech-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Other Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-buttons .btn {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Quiz & Game Section */
+        .quiz-game-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .quiz-game-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .option-card {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            width: 250px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .option-card:hover .option-icon {
+            color: white;
+        }
+
+        .option-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        /* Icon khusus untuk game */
+        .snake-icon { color: #4CAF50; }
+        .rocket-icon { color: #FF5722; }
+
+        .option-card h3 {
+            font-size: 1.8rem;
+        }
+
+        /* Container untuk quiz dan game */
+        .quiz-container, .game-container {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+            display: none;
+        }
+
+        .quiz-container.active, .game-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .quiz-question {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .quiz-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .quiz-option.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .game-content {
+            text-align: center;
+        }
+
+        .game-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .game-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--gray-color);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-item:hover {
+            background-color: var(--light-gray);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: var(--gray-color);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-text p {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Button Styling */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fallIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(-10deg);
+            }
+            70% {
+                transform: translateY(10px) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--light-color);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: var(--transition);
+            padding: 80px 30px 30px;
+            overflow-y: auto;
+        }
+
+        .dark-mode .mobile-menu {
+            background-color: var(--light-color);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mobile-menu .nav-links li {
+            margin: 0 0 20px 0;
+        }
+
+        .mobile-menu .nav-links a {
+            font-size: 1.3rem;
+        }
+
+        .mobile-menu .theme-toggle {
+            margin: 20px 0 0 0;
+            font-size: 1.8rem;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .tech-stack {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .home-second-content {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .quiz-game-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .certificate-img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .theme-toggle {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .typing-text {
+                font-size: 2.5rem;
+                min-height: 100px;
+            }
+            
+            .home-subtitle {
+                font-size: 1.2rem;
+                padding: 0 10px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .tech-stack {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .modal-content {
+                max-width: 95%;
+            }
+            
+            .modal-content img {
+                border-width: 2px;
+            }
+            
+            .home-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+            
+            .typing-text {
+                font-size: 2rem;
+                min-height: 85px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .home-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .home-social {
+                gap: 10px;
+            }
+            
+            .home-social .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+        
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">ASR Portfolio</a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#projects">Proyek</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </ul>
+                
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggleMobile">
+            <i class="fas fa-moon"></i> Mode Gelap
+        </button>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div class="certificate-modal" id="certificateModal">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Sertifikat">
+        </div>
+    </div>
+
+    <!-- Home Section - Diperbaiki untuk semua device -->
+    <section id="home">
+        <div class="container">
+            <div class="home-content center-content">
+                <h1 class="typing-text">Halo, Saya <span>Agus Saleh Rumbouw</span></h1>
+                <p class="home-subtitle">Seorang Web Developer yang passionate tentang menciptakan pengalaman digital yang menarik dan fungsional.</p>
+                
+                <div class="home-social">
+                    <a href="https://instagram.com/agussaleh" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/agussaleh" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://github.com/agus-saleh" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://tiktok.com/@agussaleh" target="_blank" class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Second Page -->
+    <section class="home-second">
+        <div class="container">
+            <div class="home-second-content">
+                <div class="home-second-visual">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Web Development">
+                </div>
+                <div class="home-second-text">
+                    <h2>Membangun Masa Depan Digital</h2>
+                    <p>Dengan pengalaman dalam pengembangan web modern, saya menggabungkan teknologi terkini dengan desain yang estetik untuk menciptakan solusi digital yang tidak hanya menarik secara visual tetapi juga fungsional dan user-friendly.</p>
+                    <p>Saya percaya bahwa setiap proyek adalah kesempatan untuk belajar dan tumbuh, dan saya selalu bersemangat untuk mengambil tantangan baru dalam dunia pengembangan web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Agus Saleh Rumbouw" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h2>Agus Saleh Rumbouw</h2>
+                    <p>Saya adalah seorang Web Developer dengan passion dalam menciptakan website yang responsif, interaktif, dan user-friendly. Saya memiliki pengalaman dalam berbagai teknologi web modern dan selalu bersemangat untuk belajar hal-hal baru di dunia teknologi.</p>
+                    <p>Pendidikan dan pengalaman saya telah membekali saya dengan keterampilan untuk mengembangkan solusi digital yang efektif, mulai dari website perusahaan hingga aplikasi web yang kompleks.</p>
+                    <p>Saya senang berkolaborasi dalam tim dan selalu mencari cara untuk meningkatkan keterampilan saya serta memberikan nilai tambah pada setiap proyek yang saya kerjakan.</p>
+                    
+                    <button class="btn btn-primary certificates-btn" id="toggleCertificates">Lihat Sertifikat Saya</button>
+                    
+                    <div class="certificates-container" id="certificatesContainer">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sertifikat Web Development" class="certificate-img" data-full="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sertifikat JavaScript" class="certificate-img" data-full="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sertifikat UI/UX Design" class="certificate-img" data-full="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Proyek Saya</h2>
+            
+            <div class="projects-tabs">
+                <button class="tab-btn active" data-tab="tech-stack">Tech Stack</button>
+                <button class="tab-btn" data-tab="other-projects">Proyek Lainnya</button>
+                <button class="tab-btn" data-tab="quiz-game">Kuis & Game</button>
+            </div>
+            
+            <!-- Tech Stack Tab -->
+            <div class="tab-content active" id="tech-stack">
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <div class="tech-icon html5"><i class="fab fa-html5"></i></div>
+                        <div class="tech-name">HTML5</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon css3"><i class="fab fa-css3-alt"></i></div>
+                        <div class="tech-name">CSS3</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon js"><i class="fab fa-js"></i></div>
+                        <div class="tech-name">JavaScript</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon react"><i class="fab fa-react"></i></div>
+                        <div class="tech-name">React</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon node"><i class="fab fa-node-js"></i></div>
+                        <div class="tech-name">Node.js</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon python"><i class="fab fa-python"></i></div>
+                        <div class="tech-name">Python</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon git"><i class="fab fa-git-alt"></i></div>
+                        <div class="tech-name">Git</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon bootstrap"><i class="fab fa-bootstrap"></i></div>
+                        <div class="tech-name">Bootstrap</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon mongodb"><i class="fas fa-database"></i></div>
+                        <div class="tech-name">MongoDB</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon figma"><i class="fab fa-figma"></i></div>
+                        <div class="tech-name">Figma</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other Projects Tab -->
+            <div class="tab-content" id="other-projects">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="E-commerce Website" class="project-img">
+                        <div class="project-info">
+                            <h3>E-commerce Website</h3>
+                            <p>Website e-commerce lengkap dengan sistem keranjang belanja, pembayaran, dan dashboard admin. Dibuat dengan React dan Node.js.</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/agus-saleh/ecommerce-details" target="_blank" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="https://agus-ecommerce-demo.netlify.app" target="_blank" class="btn btn-primary">Lihat Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Travel Blog" class="project-img">
+                        <div class="project-info">
+                            <h3>Travel Blog Platform</h3>
+                            <p>Platform blog perjalanan dengan fitur pencarian, filter, dan sistem komentar. Menggunakan MongoDB untuk database.</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/agus-saleh/travel-blog-details" target="_blank" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="https://agus-travel-blog.netlify.app" target="_blank" class="btn btn-primary">Lihat Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard" class="project-img">
+                        <div class="project-info">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Dashboard analitik dengan visualisasi data interaktif menggunakan Chart.js dan D3.js. Menampilkan data real-time.</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/agus-saleh/analytics-dashboard-details" target="_blank" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="https://agus-analytics-demo.netlify.app" target="_blank" class="btn btn-primary">Lihat Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiz & Game Tab -->
+            <div class="tab-content" id="quiz-game">
+                <div class="quiz-game-container">
+                    <h2>Pilih Kategori</h2>
+                    <p>Pilih antara kuis pengetahuan komputer atau game interaktif</p>
+                    
+                    <div class="quiz-game-options">
+                        <div class="option-card" id="quizOption">
+                            <div class="option-icon"><i class="fas fa-question-circle"></i></div>
+                            <h3>Kuis Komputer</h3>
+                            <p>Uji pengetahuan Anda tentang komputer dan teknologi</p>
+                        </div>
+                        <a href="#gameSection" class="option-card game-link" id="gameOption">
+                            <div class="option-icon"><i class="fas fa-gamepad"></i></div>
+                            <h3>Game</h3>
+                            <p>Game interaktif yang bisa Anda mainkan</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Quiz Container -->
+                    <div class="quiz-container" id="quizContainer">
+                        <div class="quiz-question" id="quizQuestion">Pertanyaan akan muncul di sini</div>
+                        <div class="quiz-options" id="quizOptions">
+                            <!-- Options will be inserted by JavaScript -->
+                        </div>
+                        <div class="quiz-nav">
+                            <button class="btn btn-secondary" id="prevQuestion">Sebelumnya</button>
+                            <div class="quiz-progress" id="quizProgress">Pertanyaan 1 dari 5</div>
+                            <button class="btn btn-primary" id="nextQuestion">Selanjutnya</button>
+                        </div>
+                        <div class="quiz-result" id="quizResult"></div>
+                    </div>
+                    
+                    <!-- Game Container -->
+                    <div class="game-container" id="gameContainer">
+                        <div class="game-content" id="gameSection">
+                            <h2>Game Interaktif</h2>
+                            <p>Pilih game yang ingin Anda mainkan. Anda bisa menambahkan game dari proyek Anda dengan menyisipkan kode atau tautan ke game yang telah Anda buat.</p>
+                            
+                            <div class="game-links">
+                                <a href="https://github.com/agus-saleh/snake-game" target="_blank" class="option-card game-link">
+                                    <div class="option-icon snake-icon"><i class="fas fa-ghost"></i></div>
+                                    <h3>Game Ular</h3>
+                                    <p>Game klasik ular dengan kontrol yang sederhana</p>
+                                </a>
+                                <a href="https://github.com/agus-saleh/rocket-game" target="_blank" class="option-card game-link">
+                                    <div class="option-icon rocket-icon"><i class="fas fa-rocket"></i></div>
+                                    <h3>Game Roket</h3>
+                                    <p>Game roket dengan tantangan menghindari asteroid</p>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-buttons" style="margin-top: 30px;">
+                                <a href="https://github.com/agus-saleh" target="_blank" class="btn btn-primary">Lihat Semua Game di GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Diperbaiki untuk integrasi WhatsApp -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Anda</label>
+                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Anda</label>
+                            <input type="email" id="email" class="form-control" placeholder="Masukkan email Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tuliskan Pesan</label>
+                            <textarea id="message" class="form-control" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item" id="emailContact" onclick="window.location.href='mailto:agus.saleh@example.com'">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>agus.saleh@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" id="locationContact" onclick="window.open('https://www.google.com/maps/place/Jakarta,+Indonesia', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Alamat</h3>
+                            <p>Jl. Merdeka No. 123, Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" id="phoneContact" onclick="window.location.href='tel:+6281234567890'">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Telepon/WhatsApp</h3>
+                            <p>+62 812 3456 7890</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Media Sosial</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/agussaleh" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/agussaleh" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://github.com/agus-saleh" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://tiktok.com/@agussaleh" target="_blank" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Agus Saleh Rumbouw</h3>
+                    <p>Seorang Web Developer yang passionate tentang menciptakan pengalaman digital yang menarik dan fungsional.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#projects">Proyek</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> agus.saleh@example.com</li>
+                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Agus Saleh Rumbouw. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+        const toggleCertificates = document.getElementById('toggleCertificates');
+        const certificatesContainer = document.getElementById('certificatesContainer');
+        const certificateModal = document.getElementById('certificateModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalImage = document.getElementById('modalImage');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const quizOption = document.getElementById('quizOption');
+        const gameOption = document.getElementById('gameOption');
+        const quizContainer = document.getElementById('quizContainer');
+        const gameContainer = document.getElementById('gameContainer');
+        const contactForm = document.getElementById('contactForm');
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        
+        // Quiz Variables
+        let currentQuestion = 0;
+        let score = 0;
+        const quizQuestions = [
+            {
+                question: "Apa kepanjangan dari HTML?",
+                options: [
+                    "Hyper Text Markup Language",
+                    "High Tech Modern Language",
+                    "Hyper Transfer Markup Language",
+                    "Home Tool Markup Language"
+                ],
+                correct: 0
+            },
+            {
+                question: "Bahasa pemrograman mana yang digunakan untuk styling website?",
+                options: [
+                    "JavaScript",
+                    "Python",
+                    "CSS",
+                    "HTML"
+                ],
+                correct: 2
+            },
+            {
+                question: "Apa fungsi utama dari JavaScript dalam pengembangan web?",
+                options: [
+                    "Membuat struktur halaman web",
+                    "Menentukan gaya dan tata letak",
+                    "Menambahkan interaktivitas dan logika",
+                    "Mengelola database"
+                ],
+                correct: 2
+            },
+            {
+                question: "Framework JavaScript mana yang dikembangkan oleh Facebook?",
+                options: [
+                    "Angular",
+                    "Vue.js",
+                    "React",
+                    "jQuery"
+                ],
+                correct: 2
+            },
+            {
+                question: "Apa yang dimaksud dengan responsif dalam desain web?",
+                options: [
+                    "Website yang cepat dimuat",
+                    "Website yang dapat beradaptasi dengan ukuran layar",
+                    "Website dengan banyak animasi",
+                    "Website dengan backend yang kuat"
+                ],
+                correct: 1
+            }
+        ];
+        
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+            
+            // Update icon
+            const icon = themeToggle.querySelector('i');
+            const iconMobile = themeToggleMobile.querySelector('i');
+            if (isDarkMode) {
+                icon.className = 'fas fa-sun';
+                iconMobile.className = 'fas fa-sun';
+                themeToggleMobile.innerHTML = '<i class="fas fa-sun"></i> Mode Terang';
+            } else {
+                icon.className = 'fas fa-moon';
+                iconMobile.className = 'fas fa-moon';
+                themeToggleMobile.innerHTML = '<i class="fas fa-moon"></i> Mode Gelap';
+            }
+        }
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            const iconMobile = themeToggleMobile.querySelector('i');
+            icon.className = 'fas fa-sun';
+            iconMobile.className = 'fas fa-sun';
+            themeToggleMobile.innerHTML = '<i class="fas fa-sun"></i> Mode Terang';
+        }
+        
+        // Mobile Menu Toggle
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Scroll Animation
+        function checkScroll() {
+            const elements = document.querySelectorAll('.hidden, .project-card');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        }
+        
+        // Initialize elements with hidden class
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                if (index > 0) { // Skip first section
+                    section.classList.add('hidden');
+                }
+            });
+            
+            // Initial check
+            checkScroll();
+        });
+        
+        // Tab Switching
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Show game section if game tab is clicked
+                if (tabId === 'quiz-game') {
+                    gameContainer.classList.add('active');
+                    quizContainer.classList.remove('active');
+                }
+            });
+        });
+        
+        // Certificates Toggle
+        toggleCertificates.addEventListener('click', () => {
+            if (certificatesContainer.style.display === 'flex') {
+                certificatesContainer.style.display = 'none';
+                toggleCertificates.textContent = 'Lihat Sertifikat Saya';
+            } else {
+                certificatesContainer.style.display = 'flex';
+                toggleCertificates.textContent = 'Sembunyikan Sertifikat';
+            }
+        });
+        
+        // Certificate Modal
+        document.querySelectorAll('.certificate-img').forEach(img => {
+            img.addEventListener('click', () => {
+                const fullSizeImage = img.getAttribute('data-full') || img.src;
+                modalImage.src = fullSizeImage;
+                certificateModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            certificateModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        certificateModal.addEventListener('click', (e) => {
+            if (e.target === certificateModal) {
+                certificateModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Quiz & Game Options
+        quizOption.addEventListener('click', () => {
+            quizContainer.classList.add('active');
+            gameContainer.classList.remove('active');
+            loadQuizQuestion();
+        });
+        
+        // WhatsApp Integration for Contact Form
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Format pesan untuk WhatsApp
+            const whatsappMessage = `Halo Agus, saya ${name} (${email}).\n\n${message}\n\nPesan ini dikirim dari portfolio website Anda.`;
+            
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Nomor WhatsApp Anda (ganti dengan nomor Anda)
+            const phoneNumber = '6281234567890'; // Tanpa tanda +
+            
+            // Buat URL WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Buka WhatsApp di tab baru
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Tampilkan notifikasi
+            alert('Mengarahkan ke WhatsApp...');
+        });
+        
+        // Quiz Functions
+        function loadQuizQuestion() {
+            const question = quizQuestions[currentQuestion];
+            const quizQuestionElement = document.getElementById('quizQuestion');
+            const quizOptionsElement = document.getElementById('quizOptions');
+            const quizProgressElement = document.getElementById('quizProgress');
+            
+            quizQuestionElement.textContent = question.question;
+            quizProgressElement.textContent = `Pertanyaan ${currentQuestion + 1} dari ${quizQuestions.length}`;
+            
+            // Clear previous options
+            quizOptionsElement.innerHTML = '';
+            
+            // Add new options
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'quiz-option';
+                optionElement.textContent = option;
+                optionElement.addEventListener('click', () => selectAnswer(index));
+                quizOptionsElement.appendChild(optionElement);
+            });
+            
+            // Update navigation buttons
+            document.getElementById('prevQuestion').style.display = currentQuestion === 0 ? 'none' : 'inline-block';
+            document.getElementById('nextQuestion').textContent = currentQuestion === quizQuestions.length - 1 ? 'Selesai' : 'Selanjutnya';
+            
+            // Clear result
+            document.getElementById('quizResult').innerHTML = '';
+        }
+        
+        function selectAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            // Remove previous selections
+            options.forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+            });
+            
+            // Mark correct and incorrect answers
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                score++;
+            } else {
+                options[selectedIndex].classList.add('incorrect');
+                options[question.correct].classList.add('correct');
+            }
+            
+            // Disable further selection
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+        
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuizQuestion();
+            }
+        }
+        
+        function showQuizResults() {
+            const quizResultElement = document.getElementById('quizResult');
+            const percentage = (score / quizQuestions.length) * 100;
+            
+            let message = '';
+            if (percentage >= 80) {
+                message = `Luar biasa! Skor Anda: ${score}/${quizQuestions.length} (${percentage}%)`;
+            } else if (percentage >= 60) {
+                message = `Bagus! Skor Anda: ${score}/${quizQuestions.length} (${percentage}%)`;
+            } else {
+                message = `Skor Anda: ${score}/${quizQuestions.length} (${percentage}%). Terus belajar!`;
+            }
+            
+            quizResultElement.innerHTML = `
+                <h3>Hasil Kuis</h3>
+                <p>${message}</p>
+                <button class="btn btn-primary" id="restartQuiz">Ulangi Kuis</button>
+            `;
+            
+            quizContainer.querySelector('.quiz-nav').style.display = 'none';
+            document.getElementById('quizQuestion').style.display = 'none';
+            document.getElementById('quizOptions').style.display = 'none';
+            
+            // Add event listener for restart button
+            document.getElementById('restartQuiz').addEventListener('click', restartQuiz);
+        }
+        
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            
+            // Reset UI
+            document.getElementById('quizQuestion').style.display = 'block';
+            document.getElementById('quizOptions').style.display = 'grid';
+            quizContainer.querySelector('.quiz-nav').style.display = 'flex';
+            document.getElementById('quizResult').innerHTML = '';
+            
+            loadQuizQuestion();
+        }
+        
+        // Clickable contact items
+        document.getElementById('emailContact').addEventListener('click', () => {
+            window.location.href = 'mailto:agus.saleh@example.com';
+        });
+        
+        document.getElementById('locationContact').addEventListener('click', () => {
+            window.open('https://www.google.com/maps/place/Jakarta,+Indonesia', '_blank');
+        });
+        
+        document.getElementById('phoneContact').addEventListener('click', () => {
+            window.location.href = 'tel:+6281234567890';
+        });
+        
+        // Typing Animation for Home Section
+        function typeWriter() {
+            const typingText = document.querySelector('.typing-text');
+            const texts = [
+                "Halo, Saya <span>Agus Saleh Rumbouw</span>",
+                "Saya seorang <span>Web Developer</span>",
+                "Saya seorang <span>UI/UX Designer</span>",
+                "Saya seorang <span>Problem Solver</span>"
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function type() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    // Deleting text
+                    typingText.innerHTML = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    // Typing text
+                    typingText.innerHTML = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                }
+                
+                // If text is fully typed
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000; // Pause at end
+                } 
+                // If text is fully deleted
+                else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typingSpeed = 500; // Pause before typing next text
+                }
+                
+                setTimeout(type, typingSpeed);
+            }
+            
+            // Start typing animation
+            setTimeout(type, 1000);
+        }
+        
+        // Event Listeners
+        themeToggle.addEventListener('click', toggleDarkMode);
+        themeToggleMobile.addEventListener('click', toggleDarkMode);
+        hamburger.addEventListener('click', openMobileMenu);
+        closeMenu.addEventListener('click', closeMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Quiz navigation
+        document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
+        document.getElementById('prevQuestion').addEventListener('click', prevQuestion);
+        
+        // Initialize
+        window.addEventListener('scroll', checkScroll);
+        typeWriter();
+        loadQuizQuestion();
+        
+        // Add hidden class to elements on page load
+        window.addEventListener('load', () => {
+            const elementsToAnimate = document.querySelectorAll('.project-card');
+            
+            elementsToAnimate.forEach(element => {
+                element.classList.add('hidden');
+            });
+            
+            checkScroll();
+        });
+    </script>
+</body>
+</html>
