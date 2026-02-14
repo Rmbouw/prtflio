@@ -1,23 +1,25 @@
 :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #ff6b6b;
-            --light-color: #f8f9fa;
-            --dark-color: #2c3e50;
-            --gray-color: #6c757d;
-            --light-gray: #e9ecef;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-            --border-radius: 10px;
-        }
+            
+     --primary-color: #4a6fa5;      /* Warna utama saat mode terang */
+    --secondary-color: #166088;    /* Warna sekunder saat mode terang */
+    --accent-color: #ff6b6b;       /* Warna aksen (pemanis) saat mode terang */
+    --light-color: #f8f9fa;        /* Background terang */
+    --dark-color: #2c3e50;         /* Teks gelap */
+    --gray-color: #6c757d;         /* Abu-abu */
+    --light-gray: #e9ecef;          /* Abu-abu terang */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 10px;
+}
+      
 
         .dark-mode {
             --primary-color: #5d8cc0;
             --secondary-color: #1a7bb9;
             --accent-color: #ff8585;
             --light-color: #1a1a2e;
-            --dark-color: #e9ecef;
-            --gray-color: #adb5bd;
+            --dark-color: #a19090;
+            --gray-color: #535d97;
             --light-gray: #16213e;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
@@ -291,7 +293,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Home Second Page - DIPERBAIKI: teks dari kanan, gambar dari kiri */
         .home-second {
             background-color: var(--light-gray);
             min-height: 100vh;
@@ -344,7 +345,6 @@
             display: block;
         }
 
-        /* About Section */
         .about-content {
             display: flex;
             align-items: center;
@@ -962,7 +962,7 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ccc;
+            color: #d3d1d1;
             font-size: 0.9rem;
         }
 
@@ -1327,3 +1327,197 @@
             justify-content: center;
             text-align: center;
         }
+
+    /* ===== HOME SECOND SECTION - PROPORSI DALAM BOX ===== */
+.home-second {
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.home-second .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.home-second-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+/* Bagian VIDEO */
+.home-second-visual {
+    flex: 1;
+    border-radius: calc(var(--border-radius) - 5px);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+.home-second-visual.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bagian TEKS - RATA KIRI UNTUK H2, JUSTIFY UNTUK P */
+.home-second-text {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    max-width: 100%;
+}
+
+.home-second-text h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.home-second-text p {
+    font-size: 0.95rem;
+    color: var(--dark-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+    .home-second {
+        padding: 40px 0;
+    }
+    
+    .home-second .container {
+        max-width: 900px;
+    }
+    
+    .home-second-content {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .home-second-visual {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .home-second-text {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .home-second-text h2 {
+        font-size: 1.8rem;
+        text-align: left;
+    }
+    
+    .home-second-text p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .home-second {
+        padding: 30px 0;
+    }
+    
+    .home-second .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .home-second-content {
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .home-second-visual {
+        max-width: 100%;
+        aspect-ratio: 16/9;
+    }
+    
+    .home-second-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+        text-align: left;
+    }
+    
+    .home-second-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.7rem;
+        text-align: justify;
+    }
+}
+
+/* ===== HP KECIL ===== */
+@media (max-width: 480px) {
+    .home-second {
+        padding: 20px 0;
+    }
+    
+    .home-second .container {
+        width: 100%;
+        padding: 0 8px;
+    }
+    
+    .home-second-content {
+        gap: 15px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .home-second-visual {
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+    }
+    
+    .home-second-text h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+        text-align: left;
+    }
+    
+    .home-second-text p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.6rem;
+        text-align: justify;
+    }
+}
+
+
+.option-card {
+    cursor: pointer; 
+}

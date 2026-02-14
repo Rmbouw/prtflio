@@ -433,7 +433,7 @@ tabBtns.forEach(btn => {
         });
         
         document.getElementById('locationContact').addEventListener('click', () => {
-            window.open('https://www.google.com/maps/place/Jakarta,+Indonesia', '_blank');
+            window.open('https://maps.app.goo.gl/krfnWZDGk94B9B6k6', '_blank');
         });
         
         document.getElementById('phoneContact').addEventListener('click', () => {
@@ -502,3 +502,15 @@ tabBtns.forEach(btn => {
         window.addEventListener('load', () => {
             checkScroll();
         });
+
+// ===== LINK GAME ASLI - BUKAN GITHUB =====
+const gameLinks = {
+    snakeGame: "https://rmbouw.github.io/gme/",  // GANTI DENGAN URL GAME ULAR ASLI
+    rocketGame: "https://rmbouw.github.io/rockt/" // GANTI DENGAN URL GAME ROKET ASLI
+};
+
+// FUNGSI UNTUK BUKA GAME (TANPA GITHUB)
+function bukaGame(url) {
+    window.location.href = url; // PINDAH LANGSUNG KE HALAMAN GAME
+    // window.open(url, '_blank'); // PAKE INI KALAU MAU DI TAB BARU
+}
