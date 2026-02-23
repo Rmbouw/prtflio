@@ -552,7 +552,6 @@
             font-size: 1.1rem;
         }
 
-        /* Other Projects - Animasi satu per satu (2 detik) */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
