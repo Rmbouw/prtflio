@@ -503,14 +503,11 @@ tabBtns.forEach(btn => {
             checkScroll();
         });
 
-// ===== LINK GAME ASLI - BUKAN GITHUB =====
 const gameLinks = {
-    snakeGame: "https://rmbouw.github.io/gme/",  // GANTI DENGAN URL GAME ULAR ASLI
-    rocketGame: "https://rmbouw.github.io/rockt/" // GANTI DENGAN URL GAME ROKET ASLI
+    snakeGame: "https://rmbouw.github.io/gme/",  
+    rocketGame: "https://rmbouw.github.io/rockt/" 
 };
 
-// FUNGSI UNTUK BUKA GAME (TANPA GITHUB)
 function bukaGame(url) {
-    window.location.href = url; // PINDAH LANGSUNG KE HALAMAN GAME
-    // window.open(url, '_blank'); // PAKE INI KALAU MAU DI TAB BARU
+    window.location.href = url; 
 }
