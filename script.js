@@ -394,11 +394,11 @@ tabBtns.forEach(btn => {
             
             let message = '';
             if (percentage >= 80) {
-                message = `Luar biasa! Skor Anda: ${score}/${quizQuestions.length} (${percentage}%)`;
+                message = `Krennn.. Skor kamu: ${score}/${quizQuestions.length} (${percentage}%)`;
             } else if (percentage >= 60) {
-                message = `Bagus! Skor Anda: ${score}/${quizQuestions.length} (${percentage}%)`;
+                message = `Bagus! Skor kamu: ${score}/${quizQuestions.length} (${percentage}%)`;
             } else {
-                message = `Skor Anda: ${score}/${quizQuestions.length} (${percentage}%). Terus belajar!`;
+                message = `Skor kamu: ${score}/${quizQuestions.length} (${percentage}%). Belajar Lagi😁!`;
             }
             
             quizResultElement.innerHTML = `
