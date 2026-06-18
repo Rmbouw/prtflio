@@ -1,12 +1,12 @@
 :root {
             
-     --primary-color: #4a6fa5;      /* Warna utama saat mode terang */
-    --secondary-color: #166088;    /* Warna sekunder saat mode terang */
-    --accent-color: #ff6b6b;       /* Warna aksen (pemanis) saat mode terang */
-    --light-color: #f8f9fa;        /* Background terang */
-    --dark-color: #2c3e50;         /* Teks gelap */
-    --gray-color: #6c757d;         /* Abu-abu */
-    --light-gray: #e9ecef;          /* Abu-abu terang */
+     --primary-color: #4a6fa5;      
+    --secondary-color: #166088;    
+    --accent-color: #ff6b6b;     
+    --light-color: #f8f9fa;      
+    --dark-color: #2c3e50;      
+    --gray-color: #6c757d;       
+    --light-gray: #e9ecef;         
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --border-radius: 10px;
